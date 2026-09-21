@@ -22,6 +22,28 @@ CandiGate（**Candidate Logit Gate**）是一套面向动态候选决策的训�
 
 ## v0.2 结果
 
+### 同协议横向对比
+
+| 模型 / 推理方式 | v0.2 validation Accuracy |
+|---|---:|
+| Qwen3-4B Generate | 72.79% |
+| Qwen3-4B candidate logits | 75.13% |
+| **CandiGate v0.2（选中 seed）** | **97.66%** |
+
+| 模型 | BFCL multiple/irrelevance | BFCL live_irrelevance |
+|---|---:|---:|
+| Qwen3-4B | 70.42% | 38.11% |
+| CandiGate v0.1.0 | 80.29% | 60.56% |
+| **CandiGate v0.2.0** | **81.57%** | **61.32%** |
+
+| Agent v2 推理方式 | Episode 成功率 | 决策准确率 | 不安全执行 |
+|---|---:|---:|---:|
+| Qwen3-4B Generate | 50.00% | 79.72% | 1 / 144 |
+| Qwen3-4B candidate logits | 50.00% | 79.72% | 1 / 144 |
+| **CandiGate v0.2 candidate logits** | **75.69%** | **92.47%** | **0 / 144** |
+
+### v0.2 独立结果
+
 | 评测 | 结果 |
 |---|---:|
 | 三种子 validation Accuracy | 97.26% ± 0.29% |
@@ -29,13 +51,9 @@ CandiGate（**Candidate Logit Gate**）是一套面向动态候选决策的训�
 | 冻结 test ECE | 0.25% |
 | 困难动态工具语义 Accuracy | 99.77% |
 | 困难动态工具 no-tool Accuracy | 100.00% |
-| BFCL V4 multiple/irrelevance 开发回归 | 81.57% |
-| BFCL V4 simple 固定 8 候选留出 | 99.22% |
-| 受控 Agent v2 episode 成功率 | 75.69% |
-| 受控 Agent v2 决策准确率 | 92.47% |
-| 受控 Agent v2 不安全执行 | 0 / 144 |
+| BFCL simple 固定 8 候选留出 | 99.22% |
 
-内部冻结 test 在 RTX 4090、batch 1、concurrency 1、预热后测得 p50/p95/p99 为 26.55/36.40/37.74 ms。完整协议与限制见 [v0.2 结果记录](./docs/results-v0.2.0-0921.md)。
+横向表只使用相同数据与协议。v0.1 的内部 test 为 1,956 条，v0.2 采用重新分组的 1,560 条冻结 test，两者分别保留为各版本独立结果。完整协议见 [v0.2 结果记录](./docs/results-v0.2.0-0921.md)。
 
 ## 核心能力
 

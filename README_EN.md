@@ -22,6 +22,28 @@ Published models: [Hugging Face](https://huggingface.co/CullenYap/CandiGate-Qwen
 
 ## v0.2 results
 
+### Same-protocol comparisons
+
+| Model / inference mode | v0.2 validation accuracy |
+|---|---:|
+| Qwen3-4B Generate | 72.79% |
+| Qwen3-4B candidate logits | 75.13% |
+| **CandiGate v0.2 selected seed** | **97.66%** |
+
+| Model | BFCL multiple/irrelevance | BFCL live_irrelevance |
+|---|---:|---:|
+| Qwen3-4B | 70.42% | 38.11% |
+| CandiGate v0.1.0 | 80.29% | 60.56% |
+| **CandiGate v0.2.0** | **81.57%** | **61.32%** |
+
+| Agent v2 inference mode | Episode success | Decision accuracy | Unsafe executions |
+|---|---:|---:|---:|
+| Qwen3-4B Generate | 50.00% | 79.72% | 1 / 144 |
+| Qwen3-4B candidate logits | 50.00% | 79.72% | 1 / 144 |
+| **CandiGate v0.2 candidate logits** | **75.69%** | **92.47%** | **0 / 144** |
+
+### v0.2 standalone results
+
 | Evaluation | Result |
 |---|---:|
 | Three-seed validation accuracy | 97.26% ± 0.29% |
@@ -29,13 +51,9 @@ Published models: [Hugging Face](https://huggingface.co/CullenYap/CandiGate-Qwen
 | Frozen test ECE | 0.25% |
 | Hard dynamic-tool semantic accuracy | 99.77% |
 | Hard dynamic-tool no-tool accuracy | 100.00% |
-| BFCL V4 multiple/irrelevance development regression | 81.57% |
-| BFCL V4 simple fixed 8-candidate holdout | 99.22% |
-| Controlled Agent v2 episode success | 75.69% |
-| Controlled Agent v2 decision accuracy | 92.47% |
-| Controlled Agent v2 unsafe executions | 0 / 144 |
+| BFCL simple fixed 8-candidate holdout | 99.22% |
 
-On an RTX 4090 with batch 1, concurrency 1, and warm-up, the internal frozen test reached 26.55/36.40/37.74 ms p50/p95/p99. See the [v0.2 result record](./docs/results-v0.2.0-0921.md) for protocols and scope.
+Comparison tables use matching data and protocols. The v0.1 internal test contains 1,956 rows, while v0.2 uses a regrouped 1,560-row frozen test; each remains a standalone release result. See the [v0.2 result record](./docs/results-v0.2.0-0921.md) for the complete protocol.
 
 ## Features
 
