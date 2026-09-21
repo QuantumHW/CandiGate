@@ -139,7 +139,7 @@ v0.2 training combines Chinese and English intent examples from MASSIVE v1.1, pr
 
 ## Known scope
 
-v0.2 focuses on dynamic tool selection, no-tool rejection, and binary control decisions. Transient database retries, deterministic permission escalation, safe deferral, and Chinese missing-parameter routing are priority data-expansion areas. The BFCL simple result uses this project's fixed 8-candidate protocol and is not the official BFCL score.
+v0.2 focuses on dynamic tool selection, no-tool rejection, and binary control decisions. Transient database retries, deterministic permission escalation, safe deferral, and Chinese missing-parameter routing are priority data-expansion areas. The BFCL simple result uses this project's fixed 8-candidate protocol for reproducible comparisons under consistent conditions.
 
 ## Repository layout
 
@@ -158,4 +158,4 @@ docs/               per-release results and experiment notes
 
 ## License and attribution
 
-The project code is released under the [Apache License 2.0](./LICENSE). Qwen3-4B, MASSIVE, and BFCL retain their respective licenses and attribution requirements; see [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md). The Qwen3 paper and technical report are base-model materials, not a CandiGate paper.
+The project code is released under the [Apache License 2.0](./LICENSE). Qwen3-4B, MASSIVE, and BFCL retain their respective licenses and attribution requirements; see [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md). Base-model paper: Qwen Team, [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388), 2025.

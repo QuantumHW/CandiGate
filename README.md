@@ -139,7 +139,7 @@ v0.2 训练数据由 MASSIVE v1.1 的中英文意图样本、项目生成的 Age
 
 ## 已知范围
 
-v0.2 聚焦动态工具选择、无合适工具拒绝和二元控制判断。Agent v2 中的临时数据库重试、确定性权限升级、安全延迟和中文缺参路由是后续数据扩展的重点。BFCL simple 结果采用本项目固定的 8 候选协议，不等同于 BFCL 官方评分。
+v0.2 聚焦动态工具选择、无合适工具拒绝和二元控制判断。Agent v2 中的临时数据库重试、确定性权限升级、安全延迟和中文缺参路由是后续数据扩展的重点。BFCL simple 结果采用本项目固定的 8 候选协议，适合在同一协议下复现与比较。
 
 ## 项目结构
 
@@ -158,4 +158,4 @@ docs/               各版本结果与实验说明
 
 ## 许可证与引用
 
-项目代码以 [Apache License 2.0](./LICENSE) 发布。Qwen3-4B、MASSIVE 与 BFCL 适用各自的许可证和署名要求，详见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。Qwen3 的论文与技术报告属于基座模型相关资料，并非 CandiGate 的论文。
+项目代码以 [Apache License 2.0](./LICENSE) 发布。Qwen3-4B、MASSIVE 与 BFCL 适用各自的许可证和署名要求，详见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。基座模型论文：Qwen Team, [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388), 2025。

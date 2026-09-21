@@ -32,7 +32,7 @@ On an RTX 4090 with batch 1, concurrency 1, and warm-up, p50/p95/p99 latency was
 
 The multiple/irrelevance development regression contains 2,371 independent cases and three deterministic candidate orders per case. v0.2 reached 81.57% accuracy and 61.32% on `live_irrelevance`, compared with 80.29% and 60.56% for v0.1.
 
-The simple/live_simple holdout contains 808 independent cases. Each case uses the correct function plus seven deterministic distractors from the frozen simple corpus and three candidate orders. Accuracy was 99.22%, with 98.64% of cases correct under all three orders. This fixed eight-candidate protocol is a project evaluation, not the official BFCL scoring procedure.
+The simple/live_simple holdout contains 808 independent cases. Each case uses the correct function plus seven deterministic distractors from the frozen simple corpus and three candidate orders. Accuracy was 99.22%, with 98.64% of cases correct under all three orders. This fixed eight-candidate project protocol supports reproducible comparisons under consistent conditions.
 
 ## Controlled Agent v2
 
