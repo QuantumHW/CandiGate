@@ -6,8 +6,8 @@ CandiGate（**Candidate Logit Gate**）是一套面向动态候选决策的训�
 
 已发布模型：
 
-- [Hugging Face：CullenYap/CandiGate-Qwen3-4B](https://huggingface.co/CullenYap/CandiGate-Qwen3-4B)
-- [ModelScope：QuantumCloud/CandiGate-Qwen3-4B](https://modelscope.cn/models/QuantumCloud/CandiGate-Qwen3-4B)
+- [Hugging Face](https://huggingface.co/CullenYap/CandiGate-Qwen3-4B)
+- [ModelScope](https://modelscope.cn/models/QuantumCloud/CandiGate-Qwen3-4B)
 
 模型版本为 `v0.1.0-0920`，以 [`Qwen/Qwen3-4B`](https://huggingface.co/Qwen/Qwen3-4B) 为基座训练。
 

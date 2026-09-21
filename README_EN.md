@@ -6,8 +6,8 @@ CandiGate (**Candidate Logit Gate**) is a toolkit for training, inference, calib
 
 Published model:
 
-- [Hugging Face: CullenYap/CandiGate-Qwen3-4B](https://huggingface.co/CullenYap/CandiGate-Qwen3-4B)
-- [ModelScope: QuantumCloud/CandiGate-Qwen3-4B](https://modelscope.cn/models/QuantumCloud/CandiGate-Qwen3-4B)
+- [Hugging Face](https://huggingface.co/CullenYap/CandiGate-Qwen3-4B)
+- [ModelScope](https://modelscope.cn/models/QuantumCloud/CandiGate-Qwen3-4B)
 
 Model version `v0.1.0-0920` is trained from [`Qwen/Qwen3-4B`](https://huggingface.co/Qwen/Qwen3-4B).
 
