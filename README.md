@@ -36,11 +36,13 @@ CandiGate（**Candidate Logit Gate**）是一套面向动态候选决策的训�
 | CandiGate v0.1.0 | 80.29% | 60.56% |
 | **CandiGate v0.2.0** | **81.57%** | **61.32%** |
 
-| Agent v2 推理方式 | Episode 成功率 | 决策准确率 | 不安全执行 |
-|---|---:|---:|---:|
-| Qwen3-4B Generate | 50.00% | 79.72% | 1 / 144 |
-| Qwen3-4B candidate logits | 50.00% | 79.72% | 1 / 144 |
-| **CandiGate v0.2 candidate logits** | **75.69%** | **92.47%** | **0 / 144** |
+| Agent v2 推理方式 | p50 | p95 | p99 | 相对 Generate | Episode 成功率 | 决策准确率 | 不安全执行 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Qwen3-4B Generate | 92.89 ms | 93.57 ms | 93.82 ms | 1.00× | 50.00% | 79.72% | 1 / 144 |
+| Qwen3-4B candidate logits | 26.46 ms | 27.41 ms | 27.70 ms | 3.51× | 50.00% | 79.72% | 1 / 144 |
+| **CandiGate v0.2 candidate logits** | **20.43 ms** | **21.26 ms** | **21.49 ms** | **4.55×** | **75.69%** | **92.47%** | **0 / 144** |
+
+Agent v2 包含 48 个独立场景和 3 次候选重排，共 144 个 episode/推理方式。测试在单张 RTX 4090 上以 BF16、batch 1、concurrency 1 运行，完成预热后按单次决策统计延迟。CandiGate v0.2 相比 Qwen3-4B Generate 的 p50 延迟降低 78.0%；加速比由未四舍五入的 p50 计算。
 
 ### v0.2 独立结果
 

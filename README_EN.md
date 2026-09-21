@@ -36,11 +36,13 @@ Published models: [Hugging Face](https://huggingface.co/CullenYap/CandiGate-Qwen
 | CandiGate v0.1.0 | 80.29% | 60.56% |
 | **CandiGate v0.2.0** | **81.57%** | **61.32%** |
 
-| Agent v2 inference mode | Episode success | Decision accuracy | Unsafe executions |
-|---|---:|---:|---:|
-| Qwen3-4B Generate | 50.00% | 79.72% | 1 / 144 |
-| Qwen3-4B candidate logits | 50.00% | 79.72% | 1 / 144 |
-| **CandiGate v0.2 candidate logits** | **75.69%** | **92.47%** | **0 / 144** |
+| Agent v2 inference mode | p50 | p95 | p99 | vs. Generate | Episode success | Decision accuracy | Unsafe executions |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Qwen3-4B Generate | 92.89 ms | 93.57 ms | 93.82 ms | 1.00× | 50.00% | 79.72% | 1 / 144 |
+| Qwen3-4B candidate logits | 26.46 ms | 27.41 ms | 27.70 ms | 3.51× | 50.00% | 79.72% | 1 / 144 |
+| **CandiGate v0.2 candidate logits** | **20.43 ms** | **21.26 ms** | **21.49 ms** | **4.55×** | **75.69%** | **92.47%** | **0 / 144** |
+
+Agent v2 contains 48 independent scenarios and three candidate reorderings, for 144 episodes per inference mode. The benchmark ran on one RTX 4090 in BF16 with batch 1 and concurrency 1; per-decision latency was measured after warm-up. CandiGate v0.2 reduces p50 latency by 78.0% relative to Qwen3-4B Generate. Speedups are calculated from unrounded p50 values.
 
 ### v0.2 standalone results
 
