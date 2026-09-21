@@ -1,0 +1,10 @@
+{
+  "model": "CandiGate-Qwen3-4B",
+  "version": "v0.2.0-0921",
+  "temperatures": {
+    "choice_noul": 1.5496953009346224
+  },
+  "calibration_samples": 1153,
+  "calibration_nll_before": 0.10689227514767656,
+  "calibration_nll_after": 0.08736712990304883
+}

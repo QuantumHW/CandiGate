@@ -60,6 +60,24 @@ def score_metrics(rows: list[dict]) -> dict:
     }
 
 
+def semantic_tool_metrics(rows: list[dict]) -> dict:
+    semantic_rows = [row for row in rows if row.get("metadata", {}).get("candidate_families")]
+    if not semantic_rows:
+        return {}
+    targets = [row["metadata"]["candidate_families"][row["target"]] for row in semantic_rows]
+    predictions = [row["metadata"]["candidate_families"][row["prediction"]] for row in semantic_rows]
+    labels = sorted(set(targets))
+    no_tool_total = sum(target == "none" for target in targets)
+    return {
+        "samples": len(semantic_rows),
+        "classes": len(labels),
+        "accuracy": float(accuracy_score(targets, predictions)),
+        "macro_f1": float(f1_score(targets, predictions, labels=labels, average="macro", zero_division=0)),
+        "no_tool_samples": no_tool_total,
+        "no_tool_accuracy": sum(t == p == "none" for t, p in zip(targets, predictions)) / max(1, no_tool_total),
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", default="Qwen/Qwen3-4B")
@@ -128,6 +146,8 @@ def main() -> None:
         "temperature": args.temperature,
         "overall": classification_metrics(rows),
         "by_primitive": {name: classification_metrics(group) for name, group in sorted(by_primitive.items())},
+        "synthetic_tool_semantics": semantic_tool_metrics(rows),
+        "macro_f1_note": "overall/by_primitive Macro-F1 uses exact option text; use synthetic_tool_semantics for dynamic tool aliases",
         "score_ordinal": score_metrics(by_primitive.get("score", [])),
         "model_load_seconds": model_load_seconds,
         "warmup_samples": args.warmup_samples,
