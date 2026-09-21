@@ -1,6 +1,6 @@
 # CandiGate
 
-[中文](./README.md) | [English](./README_EN.md)
+简体中文 | [English](./README_EN.md)
 
 CandiGate（**Candidate Logit Gate**）是一套面向动态候选决策的训练、推理、校准与 Agent 评测工具。项目以 Qwen3-4B 为基座，通过候选约束 LoRA 复现 Jev 的可观察决策行为：一次因果语言模型前向计算后，只在经过验证的候选标记上计算概率，而不是生成自由文本答案。
 

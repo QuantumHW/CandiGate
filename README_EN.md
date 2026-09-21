@@ -1,6 +1,6 @@
 # CandiGate
 
-[中文](./README.md) | [English](./README_EN.md)
+[简体中文](./README.md) | English
 
 CandiGate (**Candidate Logit Gate**) is a toolkit for training, inference, calibration, and Agent evaluation over dynamic decision candidates. Built on Qwen3-4B, it reproduces Jev's observable decision behavior with a candidate-constrained LoRA: one causal-LM forward pass is followed by probability computation over validated candidate markers instead of free-form answer generation.
 
