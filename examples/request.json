@@ -1,0 +1,7 @@
+{
+  "state": "用户需要查询成都当前天气。可用工具中只有天气查询能够访问实时天气数据。",
+  "question": "下一步应选择哪个工具？",
+  "options": ["天气查询", "日历查询", "拒绝执行"],
+  "primitive": "choice",
+  "example_id": "quickstart-weather"
+}

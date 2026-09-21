@@ -1,0 +1,8 @@
+{
+  "model": "CandiGate-Qwen3-4B",
+  "version": "v0.1.0-0920",
+  "temperatures": {
+    "choice_noul": 1.2637946122644546,
+    "score": 1.0
+  }
+}
